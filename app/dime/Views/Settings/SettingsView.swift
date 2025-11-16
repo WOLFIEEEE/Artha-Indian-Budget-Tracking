@@ -446,6 +446,37 @@ struct SettingsView: View {
             .background(Color.SettingsBackground, in: RoundedRectangle(cornerRadius: 9))
           }
           .padding(.horizontal, 20)
+          .padding(.bottom, 25)
+
+          VStack(spacing: 5) {
+            Text("LEGAL & CREDITS")
+              .font(.system(.footnote, design: .rounded).weight(.semibold))
+              .foregroundColor(Color.SubtitleText)
+              .padding(.horizontal, 10)
+              .frame(maxWidth: .infinity, alignment: .leading)
+
+            VStack(spacing: 13) {
+              NavigationLink(destination: AboutView()) {
+                SettingsRowView(systemImage: "info.circle.fill", title: "About Artha", colour: 130)
+              }
+
+              Button {
+                if let url = URL(string: "https://github.com/rarfell/dimeApp") {
+                  UIApplication.shared.open(url)
+                }
+              } label: {
+                SettingsRowView(
+                  systemImage: "arrow.triangle.branch", title: "Based on Dime (Open Source)", colour: 131)
+              }
+
+              NavigationLink(destination: LicenseView()) {
+                SettingsRowView(systemImage: "doc.text.fill", title: "GPL v3.0 License", colour: 132)
+              }
+            }
+            .padding(10)
+            .background(Color.SettingsBackground, in: RoundedRectangle(cornerRadius: 9))
+          }
+          .padding(.horizontal, 20)
           .padding(.bottom, 15)
 
           VStack(spacing: 5) {

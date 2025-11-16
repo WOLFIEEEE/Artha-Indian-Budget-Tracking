@@ -180,6 +180,28 @@ extension Color {
     static var EvenLighterText: Color {
         return Color("EvenLighterText")
     }
+    
+    // MARK: - Indian Theme Colors
+    
+    static var IndianSaffron: Color {
+        return Color("IndianSaffron")
+    }
+    
+    static var IndianGreen: Color {
+        return Color("IndianGreen")
+    }
+    
+    static var IndianNavy: Color {
+        return Color("IndianNavy")
+    }
+    
+    static var IndianGold: Color {
+        return Color("IndianGold")
+    }
+    
+    static var ArthaAccent: Color {
+        return Color("ArthaAccent")
+    }
 }
 
 public extension View {

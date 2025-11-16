@@ -45,7 +45,7 @@ struct WelcomeSheetView: View {
 
                         Text("Artha")
                             .font(.system(size: 30, weight: .medium, design: .rounded))
-                            .foregroundColor(Color.PrimaryText)
+                            .foregroundColor(Color.IndianSaffron)
 
                         Text("Version \(UIApplication.appVersion ?? "") (\(UIApplication.buildNumber ?? ""))")
                             .font(.system(size: 14, weight: .medium, design: .rounded))
@@ -99,10 +99,10 @@ struct WelcomeSheetView: View {
                     } label: {
                         Text("Get Started")
                             .font(.system(size: 20, weight: .semibold, design: .rounded))
-                            .foregroundColor(Color.LightIcon)
+                            .foregroundColor(Color.white)
                             .padding(.vertical, 12)
                             .frame(maxWidth: .infinity)
-                            .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.DarkBackground))
+                            .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color.IndianGreen))
                     }
                 }
                 .padding(30)
