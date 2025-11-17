@@ -16,7 +16,7 @@ import WidgetKit
 struct SettingsView: View {
   @Environment(\.dynamicTypeSize) var dynamicTypeSize
 
-  @AppStorage("colourScheme", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("colourScheme", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var colourScheme: Int = 0
   var colourSchemeString: String {
     if colourScheme == 1 {
@@ -28,7 +28,7 @@ struct SettingsView: View {
     }
   }
 
-  @AppStorage("activeIcon", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("activeIcon", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var activeIcon: String = "AppIcon"
   var appIconString: String {
     if activeIcon == "AppIcon1" {
@@ -42,7 +42,7 @@ struct SettingsView: View {
     }
   }
 
-  @AppStorage("firstWeekday", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("firstWeekday", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var firstWeekday: Int = 1
   var firstWeekdayString: String {
     if firstWeekday == 1 {
@@ -52,9 +52,9 @@ struct SettingsView: View {
     }
   }
 
-  @AppStorage("showNotifications", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("showNotifications", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var showNotifications: Bool = false
-  @AppStorage("notificationOption", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("notificationOption", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var option: Int = 1
   var notificationString: String {
     if showNotifications {
@@ -82,11 +82,11 @@ struct SettingsView: View {
   }
 
   @Environment(\.openURL) var openURL
-  let supportEmail = SupportEmail(toAddress: "rafasohhh@gmail.com", subject: "Support Email")
+  let supportEmail = SupportEmail(toAddress: "support@arthaapp.com", subject: "Artha Support")
   let featureRequestEmail = SupportEmail(
-    toAddress: "rafasohhh@gmail.com", subject: "Feature Request")
+    toAddress: "support@arthaapp.com", subject: "Artha Feature Request")
 
-  @AppStorage("numberEntryType", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("numberEntryType", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var numberEntryType: Int = 2
 
   var numberEntryString: String {
@@ -97,23 +97,23 @@ struct SettingsView: View {
     }
   }
 
-  @AppStorage("showCents", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("showCents", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var showCents: Bool = true
 
-  @AppStorage("animated", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime")) var animated:
+  @AppStorage("animated", store: UserDefaults(suiteName: "group.com.arthaapp.artha")) var animated:
     Bool = true
 
-  @AppStorage("currency", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime")) var currency:
+  @AppStorage("currency", store: UserDefaults(suiteName: "group.com.arthaapp.artha")) var currency:
     String = Locale.current.currencyCode!
 
-  @AppStorage("incomeTracking", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("incomeTracking", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var incomeTracking: Bool = true
     
-  @AppStorage("showExpenseOrIncomeSign", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("showExpenseOrIncomeSign", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var showExpenseOrIncomeSign: Bool = true
 
   @AppStorage(
-    "showUpcomingTransactions", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+    "showUpcomingTransactions", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var showUpcoming: Bool = true
 
   var upcomingString: String {
@@ -124,7 +124,7 @@ struct SettingsView: View {
     }
   }
 
-    @AppStorage("haptics", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+    @AppStorage("haptics", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
     var hapticType: Int = 1
 
     var hapticString: String {
@@ -217,9 +217,9 @@ struct SettingsView: View {
                   incomeTracking.toggle()
 
                   if !incomeTracking {
-                    UserDefaults(suiteName: "group.com.rafaelsoh.dime")!.set(
+                    UserDefaults(suiteName: "group.com.arthaapp.artha")!.set(
                       false, forKey: "insightsViewIncomeFiltering")
-                    UserDefaults(suiteName: "group.com.rafaelsoh.dime")!.set(
+                    UserDefaults(suiteName: "group.com.arthaapp.artha")!.set(
                       3, forKey: "logInsightsType")
                   }
                 })
@@ -409,38 +409,22 @@ struct SettingsView: View {
                   systemImage: "hand.wave.fill", title: "Feature Request", colour: 125)
               }
 
-              Button {
-                let url = "https://apps.apple.com/app/id1635280255?action=write-review"
-                guard let writeReviewURL = URL(string: url)
-                else { fatalError("Expected a valid URL") }
-                UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
-              } label: {
-                SettingsRowView(systemImage: "star.fill", title: "Rate on App Store", colour: 126)
-              }
-
-              Button {
-                shareSheet(url: "https://apps.apple.com/app/id1635280255")
-              } label: {
-                SettingsRowView(systemImage: "shareplay", title: "Share with Friends", colour: 127)
-              }
-
-              Button {
-                if let url = URL(string: "https://www.x.com/budgetwithdime") {
-                  UIApplication.shared.open(url)
-                }
-              } label: {
-                SettingsRowView(systemImage: "bird.fill", title: "Follow Dime on X", colour: 128)
-                  .frame(maxWidth: .infinity)
-              }
-
-              Button {
-                if let url = URL(string: "https://www.x.com/rarfell") {
-                  UIApplication.shared.open(url)
-                }
-              } label: {
-                SettingsRowView(
-                  systemImage: "camera.fill", title: "Follow Rafael on X", colour: 129)
-              }
+              // TODO: Add your App Store URL after approval
+              // Button {
+              //   let url = "https://apps.apple.com/app/YOUR_APP_ID_HERE?action=write-review"
+              //   guard let writeReviewURL = URL(string: url)
+              //   else { fatalError("Expected a valid URL") }
+              //   UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+              // } label: {
+              //   SettingsRowView(systemImage: "star.fill", title: "Rate on App Store", colour: 126)
+              // }
+              
+              // TODO: Add your App Store URL after approval
+              // Button {
+              //   shareSheet(url: "https://apps.apple.com/app/YOUR_APP_ID_HERE")
+              // } label: {
+              //   SettingsRowView(systemImage: "shareplay", title: "Share with Friends", colour: 127)
+              // }
             }
             .padding(10)
             .background(Color.SettingsBackground, in: RoundedRectangle(cornerRadius: 9))
@@ -501,9 +485,8 @@ struct SettingsView: View {
                 }
             }
 
-            Text("Made with ❤️ by \(makeAttributedString()) from 🇸🇬")
+            Text("Made with ❤️ for India 🇮🇳 • Based on Dime")
               .font(.system(.footnote, design: .rounded).weight(.medium))
-
               .foregroundColor(Color.SubtitleText)
               .multilineTextAlignment(.center)
           }
@@ -568,13 +551,7 @@ struct SettingsView: View {
     .frame(maxWidth: .infinity)
   }
 
-  func makeAttributedString() -> AttributedString {
-    var string = AttributedString("Rafael")
-    string.foregroundColor = Color.PrimaryText
-    string.link = URL(string: "https://www.x.com/rarfell")
-
-    return string
-  }
+  // Removed makeAttributedString function (was linking to original developer)
 
   func shareSheet(url: String) {
     let url = URL(string: url)
@@ -640,7 +617,7 @@ struct TipJarAlert: View {
 
   @State private var offset: CGFloat = 0
 
-  @AppStorage("bottomEdge", store: UserDefaults(suiteName: "group.com.rafaelsoh.dime"))
+  @AppStorage("bottomEdge", store: UserDefaults(suiteName: "group.com.arthaapp.artha"))
   var bottomEdge: Double = 15
 
   @State var opacity = 0.0

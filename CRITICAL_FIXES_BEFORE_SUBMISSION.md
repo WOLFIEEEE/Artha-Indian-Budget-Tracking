@@ -172,7 +172,7 @@ shareSheet(url: "https://apps.apple.com/app/artha") // Update after approval
 
 Change:
 ```xml
-<string>iCloud.com.rafaelsoh.dime</string>
+<string>iCloud.com.arthaapp.artha</string>
 ```
 To:
 ```xml
@@ -181,7 +181,7 @@ To:
 
 Change:
 ```xml
-<string>group.com.rafaelsoh.dime</string>
+<string>group.com.arthaapp.artha</string>
 ```
 To:
 ```xml
@@ -197,7 +197,7 @@ To:
 **Also in DataController.swift** (line 55, 57, 103, etc.):
 ```swift
 // All instances of:
-"group.com.rafaelsoh.dime"
+"group.com.arthaapp.artha"
 // Change to:
 "group.com.yourname.artha"
 ```
@@ -264,8 +264,8 @@ Text("Made with ❤️ for India 🇮🇳 • Based on Dime")
 |------|---------|-------|-------|
 | `com.rafaelsoh.dime` | `com.yourname.artha` | All files | Be careful with strings in documentation |
 | `rafasohhh@gmail.com` | `your.email@gmail.com` | Code files only | Exclude CONTACT_ORIGINAL_AUTHOR.md |
-| `group.com.rafaelsoh.dime` | `group.com.yourname.artha` | All files | App Group identifier |
-| `iCloud.com.rafaelsoh.dime` | `iCloud.com.yourname.artha` | All files | CloudKit container |
+| `group.com.arthaapp.artha` | `group.com.yourname.artha` | All files | App Group identifier |
+| `iCloud.com.arthaapp.artha` | `iCloud.com.yourname.artha` | All files | CloudKit container |
 
 **CAUTION**: Don't replace in these files (they're for reference):
 - `CONTACT_ORIGINAL_AUTHOR.md`

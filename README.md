@@ -162,7 +162,7 @@ Text(amount.toIndianCurrency(compact: true))
 Add to `WelcomeSheetView.swift` or `ContentView.swift`:
 ```swift
 func loadIndianCategories() {
-    guard !UserDefaults(suiteName: "group.com.rafaelsoh.dime")?
+    guard !UserDefaults(suiteName: "group.com.arthaapp.artha")?
         .bool(forKey: "indianCategoriesLoaded") ?? false else { return }
     
     for (index, template) in IndianCategories.expenseCategories.enumerated() {
@@ -177,7 +177,7 @@ func loadIndianCategories() {
     }
     
     dataController.save()
-    UserDefaults(suiteName: "group.com.rafaelsoh.dime")?
+    UserDefaults(suiteName: "group.com.arthaapp.artha")?
         .set(true, forKey: "indianCategoriesLoaded")
 }
 ```

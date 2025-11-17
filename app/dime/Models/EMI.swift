@@ -67,12 +67,12 @@ class EMIManager: ObservableObject {
     
     func save() {
         if let encoded = try? JSONEncoder().encode(emis) {
-            UserDefaults(suiteName: "group.com.rafaelsoh.dime")?.set(encoded, forKey: userDefaultsKey)
+            UserDefaults(suiteName: "group.com.arthaapp.artha")?.set(encoded, forKey: userDefaultsKey)
         }
     }
     
     func load() {
-        if let data = UserDefaults(suiteName: "group.com.rafaelsoh.dime")?.data(forKey: userDefaultsKey),
+        if let data = UserDefaults(suiteName: "group.com.arthaapp.artha")?.data(forKey: userDefaultsKey),
            let decoded = try? JSONDecoder().decode([EMI].self, from: data) {
             emis = decoded
         }
